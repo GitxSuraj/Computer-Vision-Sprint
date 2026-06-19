@@ -28,4 +28,4 @@ A high-intensity, 4-week engineering roadmap tracking my progression from founda
 
 ---
 
-> **Status:** Phase 1 (NumPy Essentials) currently underway.
+> **Status:** Phase 1 mastered array slicing and dimension transpositions for deep learning preparation. Now on to OpenCV.
