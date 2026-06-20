@@ -20,12 +20,14 @@ img = cv2.imread("test.jpg")
 if img is None:
     raise FileNotFoundError("Make Sure 'image.jpg' is in your folder!")
 # defining a bonding box coordinates - simulating an ai predicting box location
-print(img.shape[0])
+# print(img.shape[0]) - for testing
+
 height = img.shape[0]
 width = img.shape[1]
 startPoint = (50,50) #(x1,y1) - top left
 endPoint = (width-50,height-50) #(x2,y2) - bottom right
-print(startPoint, endPoint)
+
+# print(startPoint, endPoint) - for testing
 
 #drawing a green bounding box - 3 pixels thick
 colorBox = (0,255,0)
