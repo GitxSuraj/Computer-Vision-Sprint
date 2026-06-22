@@ -11,7 +11,9 @@ A high-intensity, 4-week engineering roadmap tracking my progression from founda
 * Image processing basics using **OpenCV** (resizing, color space conversions, data augmentation).
 
 ### Week 2: Classical Machine Learning on Images
-* *Pending*
+* Understanding Implemntion of ML in Computer Vision & **HOG**
+* Image Matrix Manupilation using **NumPy** for ML models to understand 
+* Using **Sickit-learn** to train mock model on SVM Algorithim and loading **Digits-dataset** & Training SVM for practice on real data.
 
 ### Week 3: Deep Learning Foundations & Custom CNNs
 * *Pending*
