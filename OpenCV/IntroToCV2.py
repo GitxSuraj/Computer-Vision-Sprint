@@ -8,7 +8,7 @@
 # Handaling Standard image - color conversion - Resizing
 import cv2 
 import numpy as np
-img = cv2.imread('test.jpg')
+img = cv2.imread('images/test.jpg')
 print(f"Loaded image Shape: {img.shape} - HWC format shape")
 print(f"Loaded image data type: {img.dtype}") #unit8 by default
 #fixing color space from BGR to RGB

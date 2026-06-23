@@ -41,7 +41,7 @@ def preprocessImg(imgPath, targetSize = (244,244), augment=False):
     return imgReady
 #testing the pipeline
 if __name__ == "__main__":
-    testPath = "test.jpg"
+    testPath = "images/test.jpg"
     try:
         #Run pipeline with augementation turned on
         processedTensor = preprocessImg(testPath,targetSize=(244,244),augment=True)

@@ -23,8 +23,8 @@ How it works under the hood:
 
 
 import cv2
-clrImg = cv2.imread("test.jpg")
-grayImg = cv2.imread("test.jpg",0)
+clrImg = cv2.imread("images/test.jpg")
+grayImg = cv2.imread("images/test.jpg",0)
 # Load our real test image in grayscale mode (0 tells OpenCV to load as grayscale)
 # Grayscale is required because edge detection only cares about intensity, not color.
 # Well about that grayscale thing let's find out the diffrence 
@@ -36,5 +36,5 @@ edgesGray = cv2.Canny(grayImg, threshold1=40, threshold2=90)
 edgesColor = cv2.Canny(clrImg, threshold1=40, threshold2=50)
 #play around with threshold
 
-cv2.imwrite("cannyEdgesGray.jpg", edgesGray)
-cv2.imwrite("cannyEdgescolor.jpg", edgesColor)
+cv2.imwrite("images/cannyEdgesGray.jpg", edgesGray)
+cv2.imwrite("images/cannyEdgescolor.jpg", edgesColor)

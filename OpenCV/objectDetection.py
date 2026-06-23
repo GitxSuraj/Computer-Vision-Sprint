@@ -16,7 +16,7 @@ Image co-orddinates starts at top-left corner(0,0).
  
 import cv2
 #Loading image - have to keep it in bgr format coz we have to perform operations in OpenCV only
-img = cv2.imread("test.jpg")
+img = cv2.imread("images/test.jpg")
 if img is None:
     raise FileNotFoundError("Make Sure 'image.jpg' is in your folder!")
 # defining a bonding box coordinates - simulating an ai predicting box location
@@ -42,7 +42,7 @@ colorText = (0,0,255) #Red text
 cv2.putText(img, text, org, font, fontScale, colorText,thickness=height//200)
 
 #Save the output final annoted text in your disk
-cv2.imwrite("OutputImg.jpg", img)
+cv2.imwrite("images/outputImg.jpg", img)
 
 
 
