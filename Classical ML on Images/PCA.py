@@ -1,6 +1,15 @@
 import numpy as np
 from sklearn.decomposition import PCA
-
+# The Intuition:
+"""
+Imagine a 3D shadow puppet. 
+-You shine a flashlight on a 3D object, and its shadow is projected onto a flat 2D wall.
+-Even though you dropped from 3 dimensions down to 2 dimensions,
+-you can still easily tell what the object is by looking at the outline of the shadow.
+PCA does exactly this in hyper-dimensional space. 
+-> It finds the angles of your data that contain the absolute most "variance" (spread of information) 
+-> projects the data down onto those axes, called Principal Components.
+"""
 # 1. SIMULATE MASSIVE DATA
 # Imagine we have 100 flattened high-res images. Each has 50,000 pixels (features).
 X_huge = np.random.rand(100, 50000)
