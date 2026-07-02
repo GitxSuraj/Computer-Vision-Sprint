@@ -75,3 +75,42 @@ for batch_idx, (images, labels) in enumerate(trainLoader):
     if batch_idx%40 == 0:
         print(f"Batch {batch_idx}/200 | Current Loss: {loss.item(): .4f}")
 print("\n Training Segment complete!")
+
+# --- STARTING TESTING PHASE ---
+print("\n--- Starting Evaluation on Test Dataset ---")
+
+# 1. LOAD THE SEPARATE TEST DATASET
+# Notice train=False, which pulls the 10,000 images reserved strictly for testing
+test_dataset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=64, shuffle=True)
+
+# 2. INITIALIZE TRACKING VARIABLES
+correct = 0
+total = 0
+
+# 3. SET THE PYTORCH GATES FOR EVALUATION
+model.eval() 
+
+with torch.no_grad(): 
+    for images, labels in test_loader:
+        # Shift data to the same device as the model (CPU or GPU)
+        images, labels = images.to(device), labels.to(device)
+        
+        # Pass test images forward to get raw scores (logits)
+        outputs = model(images)
+        
+        # torch.max looks at the 10 outputs and finds the highest score.
+        # It returns: (highest_value, index_location_of_highest_value)
+        # We only care about the index location, which is the predicted digit!
+        _, predicted = torch.max(outputs.data, dim=1)
+        
+        # Accumulate totals
+        total += labels.size(0) # Adds batch size (64) to the running total
+        correct += (predicted == labels).sum().item() # Counts how many predictions matched actual labels
+
+# 4. CALCULATE FINAL ACCURACY
+final_accuracy = (correct / total) * 100
+print(f"\nFinal Test Results:")
+print(f"Total Test Images Processed: {total}")
+print(f"Correctly Classified Digits: {correct}")
+print(f"Model Accuracy on Unseen Data: {final_accuracy:.2f}%")
