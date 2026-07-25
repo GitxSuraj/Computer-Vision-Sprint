@@ -1,0 +1,53 @@
+# ==========================================
+# 1. Python & Environment Caches
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+ENV/
+
+
+# ==========================================
+# 2. Heavy AI Artifacts & Weights (.pth / .pt)
+# ==========================================
+# Never push trained weight matrices or checkpoints to GitHub!
+*.pth
+*.pt
+*.onnx
+*.safetensors
+*.bin
+*.h5
+
+# ==========================================
+# 3. Datasets & Downloaded Media
+# ==========================================
+# Ignore local CIFAR-10 / ImageNet downloads
+data/
+datasets/
+*.zip
+*.tar
+*.tar.gz
+
+# Ignore local sample test images downloaded during scripts
+test_dog.jpg
+sample_dog.jpg
+
+# ==========================================
+# 4. OS & IDE Junk
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ==========================================
+# 5. Logs & Visualizers
+# ==========================================
+runs/
+wandb/
+*.log
